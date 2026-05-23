@@ -1,0 +1,165 @@
+.services-section {
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  .service-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 1px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity var(--transition-smooth);
+    }
+
+    .icon-wrapper {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.8rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      transition: all var(--transition-smooth);
+
+      .service-icon {
+        font-size: 2rem;
+        transition: all var(--transition-smooth);
+      }
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 1rem;
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
+      transition: all var(--transition-smooth);
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    // Hover glow variants
+    &.glow-emerald {
+      &::before {
+        background: var(--gradient-primary);
+      }
+      .service-icon {
+        color: var(--color-accent);
+      }
+      &:hover {
+        background: rgba(0, 255, 136, 0.03);
+        border-color: rgba(0, 255, 136, 0.3);
+        box-shadow: 0 15px 40px rgba(0, 255, 136, 0.15);
+
+        &::before { opacity: 1; }
+        .icon-wrapper {
+          background: rgba(0, 255, 136, 0.1);
+          border-color: var(--color-accent);
+        }
+        .service-icon {
+          transform: scale(1.15) rotate(5deg);
+          filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.6));
+        }
+        h3 {
+          color: var(--color-accent);
+        }
+      }
+    }
+
+    &.glow-cyan {
+      &::before {
+        background: linear-gradient(135deg, #00d4ff 0%, #ff00ff 100%);
+      }
+      .service-icon {
+        color: var(--color-accent-secondary);
+      }
+      &:hover {
+        background: rgba(0, 212, 255, 0.03);
+        border-color: rgba(0, 212, 255, 0.3);
+        box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+
+        &::before { opacity: 1; }
+        .icon-wrapper {
+          background: rgba(0, 212, 255, 0.1);
+          border-color: var(--color-accent-secondary);
+        }
+        .service-icon {
+          transform: scale(1.15) rotate(5deg);
+          filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.6));
+        }
+        h3 {
+          color: var(--color-accent-secondary);
+        }
+      }
+    }
+
+    &.glow-purple {
+      &::before {
+        background: var(--gradient-secondary);
+      }
+      .service-icon {
+        color: var(--color-accent-tertiary);
+      }
+      &:hover {
+        background: rgba(255, 0, 255, 0.03);
+        border-color: rgba(255, 0, 255, 0.3);
+        box-shadow: 0 15px 40px rgba(255, 0, 255, 0.15);
+
+        &::before { opacity: 1; }
+        .icon-wrapper {
+          background: rgba(255, 0, 255, 0.1);
+          border-color: var(--color-accent-tertiary);
+        }
+        .service-icon {
+          transform: scale(1.15) rotate(5deg);
+          filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.6));
+        }
+        h3 {
+          color: var(--color-accent-tertiary);
+        }
+      }
+    }
+  }
+}

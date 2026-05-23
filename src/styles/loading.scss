@@ -35,42 +35,86 @@
   .loading-content {
     text-align: center;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
 
-    .professional-spinner {
-      width: 60px;
-      height: 60px;
-      border: 4px solid rgba(0, 255, 136, 0.2);
-      border-top: 4px solid var(--color-accent);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
-    }
+    .progress-ring-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+      .progress-ring {
+        transform: rotate(-90deg);
 
-    .welcome-text {
-      h1 {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        color: var(--color-text-secondary);
-        margin-bottom: 1rem;
-        font-weight: 300;
-        letter-spacing: 4px;
-        text-transform: uppercase;
+        .progress-ring-bg {
+          fill: transparent;
+          stroke: rgba(255, 255, 255, 0.03);
+        }
+
+        .progress-ring-fill {
+          fill: transparent;
+          stroke: var(--color-accent);
+          stroke-linecap: round;
+          transition: stroke-dashoffset 0.1s ease;
+          filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.5));
+        }
       }
 
-      h2 {
-        font-size: clamp(2rem, 6vw, 3.5rem);
-        background: var(--gradient-accent);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+      .progress-number {
+        position: absolute;
+        font-size: 1.8rem;
         font-weight: 800;
-        letter-spacing: 2px;
+        color: #fff;
         font-family: var(--font-display);
-        filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.6));
+        display: flex;
+        align-items: baseline;
+
+        span {
+          font-size: 0.9rem;
+          color: var(--color-accent);
+          font-weight: 600;
+          margin-left: 1px;
+        }
+      }
+    }
+
+    .terminal-logs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+
+      .status-badge-loading {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        border: 1px solid rgba(0, 255, 136, 0.25);
+        background: rgba(0, 255, 136, 0.05);
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+
+      .status-text {
+        font-size: 0.85rem;
+        font-family: monospace;
+        color: var(--color-text-secondary);
+        letter-spacing: 1px;
+        min-height: 20px;
+        text-transform: uppercase;
+        animation: blinkStatus 1.5s infinite;
+
+        @keyframes blinkStatus {
+          0%, 100% { opacity: 0.8; }
+          50% { opacity: 1; }
+        }
       }
     }
   }

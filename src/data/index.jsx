@@ -30,19 +30,19 @@ export const PROFILE = {
 };
 
 export const TECH_STACK = [
-  { name: "HTML", icon: FaHtml5, level: 90, link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
-  { name: "CSS", icon: FaCss3Alt, level: 90, link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-  { name: "JavaScript", icon: FaJs, level: 80, link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-  { name: "PHP", icon: FaPhp, level: 70, link: "https://www.php.net/docs.php" },
-  { name: "Python", icon: FaPython, level: 70, link: "https://docs.python.org/3/" },
-  { name: "Java", icon: FaJava, level: 80, link: "https://docs.oracle.com/en/java/" },
-  { name: "React", icon: FaReact, level: 80, link: "https://react.dev/" },
-  { name: "Laravel", icon: FaLaravel, level: 75, link: "https://laravel.com/docs" },
-  { name: "MongoDB", icon: SiMongodb, level: 50, link: "https://www.mongodb.com/docs/" },
-  { name: "Inertia.js", icon: FaGlobe, level: 70, link: "https://inertiajs.com/" },
-  { name: "Express.js", icon: FaNodeJs, level: 60, link: "https://expressjs.com/" },
-  { name: "MySQL", icon: SiMysql, level: 80, link: "https://dev.mysql.com/doc/" },
-  { name: "React Native", icon: SiExpo, level: 80, link: "https://reactnative.dev/docs/getting-started" },
+  { name: "HTML", icon: FaHtml5, category: "frontend", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+  { name: "CSS", icon: FaCss3Alt, category: "frontend", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { name: "JavaScript", icon: FaJs, category: "frontend", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { name: "PHP", icon: FaPhp, category: "backend", link: "https://www.php.net/docs.php" },
+  { name: "Python", icon: FaPython, category: "backend", link: "https://docs.python.org/3/" },
+  { name: "Java", icon: FaJava, category: "backend", link: "https://docs.oracle.com/en/java/" },
+  { name: "React", icon: FaReact, category: "frontend", link: "https://react.dev/" },
+  { name: "Laravel", icon: FaLaravel, category: "backend", link: "https://laravel.com/docs" },
+  { name: "MongoDB", icon: SiMongodb, category: "database", link: "https://www.mongodb.com/docs/" },
+  { name: "Inertia.js", icon: FaGlobe, category: "frontend", link: "https://inertiajs.com/" },
+  { name: "Express.js", icon: FaNodeJs, category: "backend", link: "https://expressjs.com/" },
+  { name: "MySQL", icon: SiMysql, category: "database", link: "https://dev.mysql.com/doc/" },
+  { name: "React Native", icon: SiExpo, category: "mobile", link: "https://reactnative.dev/docs/getting-started" },
 ];
 
 export const PROJECTS = [

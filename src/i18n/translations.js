@@ -3,6 +3,7 @@ export const translations = {
     // Navbar
     nav: {
       home: 'Home',
+      services: 'Services',
       skills: 'Skills',
       projects: 'Projects',
       about: 'About',
@@ -13,7 +14,7 @@ export const translations = {
       title: 'Full-Stack Web & Mobile Developer',
       greeting: "I'm",
       name: 'Saad Korma',
-      subtitle: 'WEB DEVELOPER | MOBILE DEVELOPER',
+      subtitle: 'Full Stack Developer (Mobile & Web)',
       description: 'I build full-stack web and mobile applications, from backend APIs to frontend interfaces, focusing on performance and real-world solutions. I turn complex problems into smooth, efficient code.',
       viewWork: 'View Work',
       aboutMe: 'About Me',
@@ -21,7 +22,38 @@ export const translations = {
     },
     // Tech Stack
     techStack: {
-      title: 'Technologies & Tools'
+      title: 'Technologies & Tools',
+      categories: {
+        all: 'All',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        database: 'Database',
+        mobile: 'Mobile'
+      },
+      views: {
+        globe: '3D Globe',
+        grid: 'Grid View'
+      }
+    },
+    // Services
+    services: {
+      title: 'Services I Offer',
+      webDev: {
+        title: 'Full-Stack Web Development',
+        description: 'Custom, high-performance responsive web applications built using React, Vite, PHP, and Laravel.'
+      },
+      mobileDev: {
+        title: 'Mobile App Development',
+        description: 'Beautiful cross-platform mobile apps for iOS & Android built with React Native and Expo.'
+      },
+      apiDev: {
+        title: 'API & Integration',
+        description: 'Secure, clean backend RESTful API architecture, WebSocket real-time systems, and payment gateway setups.'
+      },
+      dbDev: {
+        title: 'Database Architecture',
+        description: 'Optimized relational/NoSQL schemas (MySQL, MongoDB), index tuning, and secure data storage models.'
+      }
     },
     // Projects
     projects: {
@@ -62,7 +94,14 @@ export const translations = {
       placeholderName: 'Enter your full name',
       placeholderPhone: '+212 XXX XXX XXX',
       placeholderMessage: 'Tell me about your project...',
-      submit: 'Send via WhatsApp'
+      submit: 'Send via WhatsApp',
+      localTime: 'Local Time',
+      available: 'Available for freelance projects',
+      timezone: 'Casablanca (GMT+1)',
+      location: 'Location',
+      morocco: 'Casablanca, Morocco',
+      directEmail: 'Direct Email',
+      quickConnect: 'Quick Connect'
     },
     // Footer
     footer: {
@@ -74,6 +113,7 @@ export const translations = {
   fr: {
     nav: {
       home: 'Accueil',
+      services: 'Services',
       skills: 'Compétences',
       projects: 'Projets',
       about: 'À propos',
@@ -83,15 +123,47 @@ export const translations = {
       title: 'Développeur Full-Stack Web & Mobile',
       greeting: "Je suis",
       name: 'Saad Korma',
-      subtitle: 'DÉVELOPPEUR WEB | DÉVELOPPEUR MOBILE',
+      subtitle: 'Développeur Full Stack (Mobile & Web)',
       description: 'Je crée des applications web et mobiles full-stack, des API backend aux interfaces frontend, en mettant l\'accent sur les performances et les solutions réelles. Je transforme les problèmes complexes en code fluide et efficace.',
       viewWork: 'Voir mes travaux',
       aboutMe: 'À propos',
       downloadCV: 'Télécharger le CV'
     },
     techStack: {
-      title: 'Technologies & Outils'
+      title: 'Technologies & Outils',
+      categories: {
+        all: 'Tous',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        database: 'Bases de données',
+        mobile: 'Mobile'
+      },
+      views: {
+        globe: 'Globe 3D',
+        grid: 'Vue Grille'
+      }
     },
+    // Services
+    services: {
+      title: 'Services Offerts',
+      webDev: {
+        title: 'Développement Web Full-Stack',
+        description: 'Applications web sur mesure, performantes et réactives construites avec React, Vite, PHP et Laravel.'
+      },
+      mobileDev: {
+        title: 'Développement d\'Applications Mobiles',
+        description: 'Superbes applications mobiles multiplateformes pour iOS & Android créées avec React Native et Expo.'
+      },
+      apiDev: {
+        title: 'API & Intégration',
+        description: 'Architecture d\'API RESTful backend sécurisée et propre, systèmes WebSockets en temps réel et intégration de passerelles de paiement.'
+      },
+      dbDev: {
+        title: 'Architecture de Base de Données',
+        description: 'Schémas relationnels/NoSQL optimisés (MySQL, MongoDB), réglage des index et modèles de stockage de données sécurisés.'
+      }
+    },
+    // Projects
     projects: {
       title: 'Projets en vedette',
       ecommerce: {
@@ -128,7 +200,14 @@ export const translations = {
       placeholderName: 'Entrez votre nom complet',
       placeholderPhone: '+212 XXX XXX XXX',
       placeholderMessage: 'Parlez-moi de votre projet...',
-      submit: 'Envoyer via WhatsApp'
+      submit: 'Envoyer via WhatsApp',
+      localTime: 'Heure Locale',
+      available: 'Disponible pour des projets freelance',
+      timezone: 'Casablanca (GMT+1)',
+      location: 'Localisation',
+      morocco: 'Casablanca, Maroc',
+      directEmail: 'Email Direct',
+      quickConnect: 'Contact Rapide'
     },
     footer: {
       available: 'Disponible pour Projets Freelance & Professionnels',
@@ -139,6 +218,7 @@ export const translations = {
   es: {
     nav: {
       home: 'Inicio',
+      services: 'Servicios',
       skills: 'Habilidades',
       projects: 'Proyectos',
       about: 'Acerca de',
@@ -148,15 +228,47 @@ export const translations = {
       title: 'Desarrollador Full-Stack Web & Móvil',
       greeting: "Soy",
       name: 'Saad Korma',
-      subtitle: 'DESARROLLADOR WEB | DESARROLLADOR MÓVIL',
+      subtitle: 'Desarrollador Full Stack (Móvil y Web)',
       description: 'Construyo aplicaciones web y móviles full-stack, desde APIs backend hasta interfaces frontend, enfocándome en rendimiento y soluciones del mundo real. Convierto problemas complejos en código fluido y eficiente.',
       viewWork: 'Ver trabajos',
       aboutMe: 'Acerca de mí',
       downloadCV: 'Descargar CV'
     },
     techStack: {
-      title: 'Tecnologías y Herramientas'
+      title: 'Tecnologías y Herramientas',
+      categories: {
+        all: 'Todos',
+        frontend: 'Frontend',
+        backend: 'Backend',
+        database: 'Bases de Datos',
+        mobile: 'Móvil'
+      },
+      views: {
+        globe: 'Globo 3D',
+        grid: 'Vista Rejilla'
+      }
     },
+    // Services
+    services: {
+      title: 'Servicios que Ofrezco',
+      webDev: {
+        title: 'Desarrollo Web Full-Stack',
+        description: 'Aplicaciones web adaptables y de alto rendimiento personalizadas construidas con React, Vite, PHP y Laravel.'
+      },
+      mobileDev: {
+        title: 'Desarrollo de Aplicaciones Móviles',
+        description: 'Hermosas aplicaciones móviles multiplataforma para iOS y Android creadas con React Native y Expo.'
+      },
+      apiDev: {
+        title: 'API e Integración',
+        description: 'Arquitectura limpia y segura de API RESTful backend, sistemas en tiempo réel WebSockets y pasarelas de pago.'
+      },
+      dbDev: {
+        title: 'Arquitectura de Base de Datos',
+        description: 'Diseño optimizado de esquemas relacionales/NoSQL (MySQL, MongoDB), ajuste de índices y modelos de almacenamiento de datos.'
+      }
+    },
+    // Projects
     projects: {
       title: 'Proyectos destacados',
       ecommerce: {
@@ -193,7 +305,14 @@ export const translations = {
       placeholderName: 'Ingresa tu nombre completo',
       placeholderPhone: '+212 XXX XXX XXX',
       placeholderMessage: 'Cuéntame sobre tu proyecto...',
-      submit: 'Enviar por WhatsApp'
+      submit: 'Enviar por WhatsApp',
+      localTime: 'Hora Local',
+      available: 'Disponible para proyectos freelance',
+      timezone: 'Casablanca (GMT+1)',
+      location: 'Ubicación',
+      morocco: 'Casablanca, Marruecos',
+      directEmail: 'Email Directo',
+      quickConnect: 'Contacto Rápido'
     },
     footer: {
       available: 'Disponible para Proyectos Freelance y Profesionales',
@@ -204,6 +323,7 @@ export const translations = {
   ar: {
     nav: {
       home: 'الرئيسية',
+      services: 'الخدمات',
       skills: 'المهارات',
       projects: 'المشاريع',
       about: 'عني',
@@ -213,15 +333,47 @@ export const translations = {
       title: 'مطور ويب وتطبيقات موبايل متكامل',
       greeting: "أنا",
       name: 'سعد كرمة',
-      subtitle: 'مطور ويب | مطور تطبيقات موبايل',
+      subtitle: 'مطور فول ستاك (ويب وموبايل)',
       description: 'أقوم ببناء تطبيقات ويب وموبايل متكاملة، من واجهات برمجة التطبيقات الخلفية إلى الواجهات الأمامية، مع التركيز على الأداء والحلول الواقعية. أحول المشاكل المعقدة إلى كود سلس وفعال.',
       viewWork: 'عرض الأعمال',
       aboutMe: 'عني',
       downloadCV: 'تحميل السيرة الذاتية'
     },
     techStack: {
-      title: 'التقنيات والأدوات'
+      title: 'التقنيات والأدوات',
+      categories: {
+        all: 'الكل',
+        frontend: 'الواجهة الأمامية',
+        backend: 'الواجهة الخلفية',
+        database: 'قواعد البيانات',
+        mobile: 'تطبيقات الموبايل'
+      },
+      views: {
+        globe: 'كرة ثلاثية الأبعاد',
+        grid: 'عرض الشبكة'
+      }
     },
+    // Services
+    services: {
+      title: 'الخدمات التي أقدمها',
+      webDev: {
+        title: 'تطوير مواقع الويب المتكاملة',
+        description: 'مواقع وتطبيقات ويب مخصصة وعالية الأداء، متجاوبة بالكامل ومبنية باستخدام React و Vite و PHP و Laravel.'
+      },
+      mobileDev: {
+        title: 'تطوير تطبيقات الموبايل',
+        description: 'تطبيقات موبايل ممتازة تعمل على نظامي iOS و Android، مبنية باستخدام React Native و Expo.'
+      },
+      apiDev: {
+        title: 'تطوير واجهات البرمجة والربط (API)',
+        description: 'بناء وبرمجة واجهات RESTful API خلفية آمنة ونظيفة، وأنظمة دردشة فورية WebSockets، وتكامل بوابات الدفع.'
+      },
+      dbDev: {
+        title: 'هندسة وقواعد البيانات',
+        description: 'تصميم أمثل لقواعد البيانات (MySQL, MongoDB)، وتحسين الأداء، ونماذج تخزين البيانات الآمنة.'
+      }
+    },
+    // Projects
     projects: {
       title: 'المشاريع المميزة',
       ecommerce: {
@@ -258,7 +410,14 @@ export const translations = {
       placeholderName: 'أدخل اسمك الكامل',
       placeholderPhone: '+212 XXX XXX XXX',
       placeholderMessage: 'أخبرني عن مشروعك...',
-      submit: 'إرسال عبر واتساب'
+      submit: 'إرسال عبر واتساب',
+      localTime: 'الوقت المحلي',
+      available: 'متاح للمشاريع المستقلة',
+      timezone: 'الدار البيضاء (GMT+1)',
+      location: 'الموقع',
+      morocco: 'الدار البيضاء، المغرب',
+      directEmail: 'البريد الإلكتروني المباشر',
+      quickConnect: 'اتصال سريع'
     },
     footer: {
       available: 'متاح لمشاريع العمل الحر والمشاريع المهنية',

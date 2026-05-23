@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Services from './components/Services';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CanvasAnimation from './components/CanvasAnimation';
+import ThreeBackground from './components/ThreeBackground';
 import SwimmingIcons from './components/SwimmingIcons';
 import LoadingScreen from './components/LoadingScreen';
 // import CustomCursor from './components/CustomCursor';
@@ -40,9 +41,10 @@ function App() {
       <PageProgressBar />
       {/* Custom cursor removed - not good */}
       <SwimmingIcons />
-      <CanvasAnimation />
+      <ThreeBackground />
       <Navbar />
       <Hero />
+      <Services />
       <TechStack />
       <Projects />
       <About />

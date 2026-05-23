@@ -114,7 +114,6 @@ const Hero = () => {
             transition={{ delay: 1, duration: 0.5 }}
           >
             <span className="typing-text">{displayedText}</span>
-            <span className="cursor">|</span>
           </motion.div>
 
           <motion.p
@@ -133,7 +132,7 @@ const Hero = () => {
           >
             <a href="#projects" className="btn primary">{t('hero.viewWork')}</a>
             <a href="#about" className="btn secondary">{t('hero.aboutMe')}</a>
-            <a href={cvFile} download="Saad_Korma_CV.pdf" className="btn cv-btn">{t('hero.downloadCV')}</a>
+            <a href={cvFile} download="Saad_Korma_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn cv-btn">{t('hero.downloadCV')}</a>
           </motion.div>
         </motion.div>
 

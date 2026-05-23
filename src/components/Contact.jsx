@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/contact.scss';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
+import { FaWhatsapp, FaEnvelope, FaGithub, FaInstagram, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
   const { t } = useLanguage();
+  const [time, setTime] = useState('');
   const [formData, setFormData] = useState({
     fullName: '',
     telephone: '',
     need: 'Website',
     message: ''
   });
+
+  useEffect(() => {
+    const updateTime = () => {
+      const options = {
+        timeZone: 'Africa/Casablanca',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      };
+      const formatter = new Intl.DateTimeFormat([], options);
+      setTime(formatter.format(new Date()));
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -21,8 +41,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Create WhatsApp message (keep in English/French or format based on lang if needed, keeping simple for now)
     const message = `
 *New Contact from Portfolio*
 
@@ -71,76 +89,119 @@ ${formData.message}
           {t('contact.title')} <span>{t('contact.titleWebsite')}</span> {t('contact.titleOr')} <span>{t('contact.titleApp')}</span>
         </h2>
         
-        <div className="contact-container">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="fullName">{t('contact.fullName')} *</label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
-                placeholder={t('contact.placeholderName')}
-              />
+        <div className="contact-grid">
+          <div className="info-column">
+            <div className="info-card clock-card">
+              <div className="card-header">
+                <FaClock className="card-icon glow-icon-green" />
+                <h3>{t('contact.localTime')}</h3>
+              </div>
+              <div className="clock-display">{time}</div>
+              <span className="timezone-label">{t('contact.timezone')}</span>
+              <div className="status-badge">
+                <span className="ping-dot"></span>
+                <span>{t('contact.available')}</span>
+              </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="telephone">{t('contact.telephone')} *</label>
-              <input
-                type="tel"
-                id="telephone"
-                name="telephone"
-                value={formData.telephone}
-                onChange={handleChange}
-                required
-                placeholder={t('contact.placeholderPhone')}
-              />
+            <div className="info-card location-card">
+              <div className="card-header">
+                <FaMapMarkerAlt className="card-icon glow-icon-blue" />
+                <h3>{t('contact.location')}</h3>
+              </div>
+              <p className="location-text">{t('contact.morocco')}</p>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="need">{t('contact.need')} *</label>
-              <select
-                id="need"
-                name="need"
-                value={formData.need}
-                onChange={handleChange}
-                required
-              >
-                <option value="Website">{t('contact.needWebsite')}</option>
-                <option value="Mobile App">{t('contact.needMobile')}</option>
-                <option value="Both">{t('contact.needBoth')}</option>
-              </select>
+            <div className="info-card quick-connect-card">
+              <h3>{t('contact.quickConnect')}</h3>
+              <div className="social-links-grid">
+                <a href="https://wa.me/212670955826" target="_blank" rel="noopener noreferrer" className="social-badge whatsapp">
+                  <FaWhatsapp />
+                  <span>WhatsApp</span>
+                </a>
+                <a href="mailto:saadkorma84@gmail.com" className="social-badge email">
+                  <FaEnvelope />
+                  <span>Email</span>
+                </a>
+                <a href="https://github.com/SKDEV-05" target="_blank" rel="noopener noreferrer" className="social-badge github">
+                  <FaGithub />
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.instagram.com/saadkorma_dev/" target="_blank" rel="noopener noreferrer" className="social-badge instagram">
+                  <FaInstagram />
+                  <span>Instagram</span>
+                </a>
+              </div>
             </div>
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="message">{t('contact.message')}</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="5"
-                placeholder={t('contact.placeholderMessage')}
-              ></textarea>
-            </div>
+          <div className="form-column">
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="fullName">{t('contact.fullName')} *</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
+                  placeholder={t('contact.placeholderName')}
+                />
+              </div>
 
-            <div className="form-buttons" style={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
-              <button type="submit" className="submit-btn whatsapp">
-                <span>{t('contact.submit')}</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-              </button>
-              <button type="button" className="submit-btn email" onClick={handleEmailSubmit} style={{ background: 'transparent', border: '2px solid var(--color-accent)', color: 'var(--color-accent)' }}>
-                <span>Send via Email</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
-              </button>
-            </div>
-          </form>
+              <div className="form-group">
+                <label htmlFor="telephone">{t('contact.telephone')} *</label>
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  value={formData.telephone}
+                  onChange={handleChange}
+                  required
+                  placeholder={t('contact.placeholderPhone')}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="need">{t('contact.need')} *</label>
+                <select
+                  id="need"
+                  name="need"
+                  value={formData.need}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="Website">{t('contact.needWebsite')}</option>
+                  <option value="Mobile App">{t('contact.needMobile')}</option>
+                  <option value="Both">{t('contact.needBoth')}</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">{t('contact.message')}</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="4"
+                  placeholder={t('contact.placeholderMessage')}
+                ></textarea>
+              </div>
+
+              <div className="form-buttons">
+                <button type="submit" className="submit-btn whatsapp">
+                  <FaWhatsapp />
+                  <span>{t('contact.submit')}</span>
+                </button>
+                <button type="button" className="submit-btn email" onClick={handleEmailSubmit}>
+                  <FaEnvelope />
+                  <span>{t('contact.directEmail')}</span>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </motion.div>
     </section>
