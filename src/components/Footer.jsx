@@ -54,7 +54,7 @@ const Footer = () => {
           <h3>Contact Me</h3>
           <div className="contact-info">
             <div><FaPhone /> {PROFILE.social.phone}</div>
-            <div><FaEnvelope /> saadkorma84a@gmail.com</div>
+            <div><FaEnvelope /> saadkorma84@gmail.com</div>
             <div>Available for Worldwide Projects</div>
           </div>
         </div>
