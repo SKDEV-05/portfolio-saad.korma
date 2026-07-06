@@ -146,7 +146,7 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
           >
             <a href="#projects" className="btn primary">{t('hero.viewWork')} →</a>
-            <a href="#contact" className="btn secondary">{t('hero.letsTalk') || t('nav.contact')}</a>
+            <a href="#contact" className="btn secondary">{t('hero.letsTalk')}</a>
             <a href={cvFile} download="Saad_Korma_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn cv-btn">{t('hero.downloadCV')}</a>
           </motion.div>
         </motion.div>

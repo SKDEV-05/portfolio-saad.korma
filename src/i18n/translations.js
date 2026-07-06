@@ -21,6 +21,7 @@ export const translations = {
       description: '20-year-old Full-Stack Developer from Morocco. Passionate about building fast, scalable web applications.',
       viewWork: 'View Projects',
       aboutMe: 'About Me',
+      letsTalk: "Let's Talk",
       downloadCV: 'Download CV'
     },
     // Journey
@@ -187,6 +188,7 @@ export const translations = {
       description: 'Développeur Full-Stack de 20 ans originaire du Maroc. Passionné par la création d\'applications web rapides et évolutives.',
       viewWork: 'Voir Projets',
       aboutMe: 'À propos',
+      letsTalk: 'Discutons',
       downloadCV: 'Télécharger le CV'
     },
     // Journey

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/navbar.scss';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaMusic, FaVolumeMute, FaGlobe, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { FaGlobe, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, changeLanguage, t } = useLanguage();
@@ -26,10 +25,6 @@ const Navbar = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
   };
 
-  const toggleMusic = () => {
-    setIsPlaying(!isPlaying);
-    // Logic to play music would go here if file provided
-  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -102,9 +97,6 @@ const Navbar = () => {
             {theme === 'dark' ? <FaSun /> : <FaMoon />}
           </button>
 
-          <button className="music-btn" onClick={toggleMusic} title="Toggle Music">
-            {isPlaying ? <FaMusic /> : <FaVolumeMute />}
-          </button>
 
           {/* Hamburger Menu Toggler */}
           <button 
