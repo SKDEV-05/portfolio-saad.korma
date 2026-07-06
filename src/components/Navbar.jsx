@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/navbar.scss';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGlobe, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { FaGlobe, FaBars, FaTimes, FaSun, FaMoon, FaGithub, FaInstagram } from 'react-icons/fa';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar = () => {
@@ -52,10 +52,51 @@ const Navbar = () => {
 
   const currentLang = languages.find(lang => lang.code === language);
 
+  const drawerVariants = {
+    hidden: { opacity: 0, x: '100%' },
+    visible: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { 
+        type: 'spring', 
+        stiffness: 240, 
+        damping: 30,
+        staggerChildren: 0.08,
+        delayChildren: 0.15
+      } 
+    },
+    exit: { 
+      opacity: 0, 
+      x: '100%', 
+      transition: { 
+        type: 'tween',
+        ease: 'easeIn',
+        duration: 0.25,
+        staggerChildren: 0.04,
+        staggerDirection: -1
+      } 
+    }
+  };
+
+  const linkItemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { type: 'spring', stiffness: 180, damping: 16 } 
+    },
+    exit: { 
+      opacity: 0, 
+      y: -20, 
+      transition: { duration: 0.15 } 
+    }
+  };
+
+
   return (
     <>
       <motion.nav 
-        className={`navbar ${scrolled ? 'scrolled' : ''}`}
+        className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'drawer-open' : ''}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "circOut" }}
@@ -123,21 +164,37 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <motion.div 
             className="mobile-drawer"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', stiffness: 260, damping: 26 }}
+            variants={drawerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
           >
             <div className="drawer-content">
-              <ul className="drawer-links">
-                <li><a onClick={() => scrollToSection('hero')}>{t('nav.home')}</a></li>
-                <li><a onClick={() => scrollToSection('about')}>{t('nav.about')}</a></li>
-                <li><a onClick={() => scrollToSection('journey')}>{t('nav.journey')}</a></li>
-                <li><a onClick={() => scrollToSection('services')}>{t('nav.services')}</a></li>
-                <li><a onClick={() => scrollToSection('stack')}>{t('nav.skills')}</a></li>
-                <li><a onClick={() => scrollToSection('projects')}>{t('nav.projects')}</a></li>
-                <li><a onClick={() => scrollToSection('contact')}>{t('nav.contact')}</a></li>
-              </ul>
+              {/* Drawer Header Brand */}
+              <motion.div className="drawer-brand" variants={linkItemVariants}>
+                <h3>SAAD <span>KORMA</span></h3>
+                <p>Full-Stack Developer</p>
+              </motion.div>
+
+              <motion.ul className="drawer-links">
+                <motion.li variants={linkItemVariants}><a onClick={() => scrollToSection('hero')}>{t('nav.home')}</a></motion.li>
+                <motion.li variants={linkItemVariants}><a onClick={() => scrollToSection('about')}>{t('nav.about')}</a></motion.li>
+                <motion.li variants={linkItemVariants}><a onClick={() => scrollToSection('journey')}>{t('nav.journey')}</a></motion.li>
+                <motion.li variants={linkItemVariants}><a onClick={() => scrollToSection('services')}>{t('nav.services')}</a></motion.li>
+                <motion.li variants={linkItemVariants}><a onClick={() => scrollToSection('stack')}>{t('nav.skills')}</a></motion.li>
+                <motion.li variants={linkItemVariants}><a onClick={() => scrollToSection('projects')}>{t('nav.projects')}</a></motion.li>
+                <motion.li variants={linkItemVariants}><a onClick={() => scrollToSection('contact')}>{t('nav.contact')}</a></motion.li>
+              </motion.ul>
+
+              {/* Drawer Footer Socials */}
+              <motion.div className="drawer-socials" variants={linkItemVariants}>
+                <a href="https://github.com/SKDEV-05" target="_blank" rel="noopener noreferrer" title="GitHub">
+                  <FaGithub />
+                </a>
+                <a href="https://www.instagram.com/saadkorma_dev/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                  <FaInstagram />
+                </a>
+              </motion.div>
             </div>
           </motion.div>
         )}
