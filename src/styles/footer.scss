@@ -134,3 +134,22 @@
     }
   }
 }
+
+[data-theme="light"] {
+  .footer {
+    .footer-content {
+      .social-links {
+        a {
+          color: var(--color-text-main);
+          background: rgba(0, 0, 0, 0.03);
+          border-color: rgba(0, 0, 0, 0.08);
+
+          &:hover {
+            color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0, 168, 112, 0.25);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/navbar.scss';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaMusic, FaVolumeMute, FaGlobe, FaBars, FaTimes } from 'react-icons/fa';
+import { FaMusic, FaVolumeMute, FaGlobe, FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar = () => {
@@ -9,6 +9,22 @@ const Navbar = () => {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, changeLanguage, t } = useLanguage();
+
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   const toggleMusic = () => {
     setIsPlaying(!isPlaying);
@@ -44,10 +60,11 @@ const Navbar = () => {
         
         <ul className="nav-links">
           <li><a onClick={() => scrollToSection('hero')}>{t('nav.home')}</a></li>
+          <li><a onClick={() => scrollToSection('about')}>{t('nav.about')}</a></li>
+          <li><a onClick={() => scrollToSection('journey')}>{t('nav.journey')}</a></li>
           <li><a onClick={() => scrollToSection('services')}>{t('nav.services')}</a></li>
           <li><a onClick={() => scrollToSection('stack')}>{t('nav.skills')}</a></li>
           <li><a onClick={() => scrollToSection('projects')}>{t('nav.projects')}</a></li>
-          <li><a onClick={() => scrollToSection('about')}>{t('nav.about')}</a></li>
           <li><a onClick={() => scrollToSection('contact')}>{t('nav.contact')}</a></li>
         </ul>
 
@@ -81,6 +98,10 @@ const Navbar = () => {
             )}
           </div>
 
+          <button className="theme-btn" onClick={toggleTheme} title="Toggle Theme">
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
+          </button>
+
           <button className="music-btn" onClick={toggleMusic} title="Toggle Music">
             {isPlaying ? <FaMusic /> : <FaVolumeMute />}
           </button>
@@ -109,10 +130,11 @@ const Navbar = () => {
             <div className="drawer-content">
               <ul className="drawer-links">
                 <li><a onClick={() => scrollToSection('hero')}>{t('nav.home')}</a></li>
+                <li><a onClick={() => scrollToSection('about')}>{t('nav.about')}</a></li>
+                <li><a onClick={() => scrollToSection('journey')}>{t('nav.journey')}</a></li>
                 <li><a onClick={() => scrollToSection('services')}>{t('nav.services')}</a></li>
                 <li><a onClick={() => scrollToSection('stack')}>{t('nav.skills')}</a></li>
                 <li><a onClick={() => scrollToSection('projects')}>{t('nav.projects')}</a></li>
-                <li><a onClick={() => scrollToSection('about')}>{t('nav.about')}</a></li>
                 <li><a onClick={() => scrollToSection('contact')}>{t('nav.contact')}</a></li>
               </ul>
             </div>

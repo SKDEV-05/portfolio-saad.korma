@@ -47,6 +47,52 @@
   --shadow-accent: 0 0 20px var(--color-accent-glow);
 }
 
+[data-theme="light"] {
+  // Premium Accent Colors (Legible in light mode)
+  --color-accent: #00a870;
+  --color-accent-secondary: #0077b6;
+  --color-accent-tertiary: #7209b7;
+  --color-accent-dim: rgba(0, 168, 112, 0.1);
+  --color-accent-glow: rgba(0, 168, 112, 0.25);
+
+  // Gradients
+  --gradient-primary: linear-gradient(135deg, #00a870 0%, #0077b6 100%);
+  --gradient-secondary: linear-gradient(135deg, #0077b6 0%, #7209b7 100%);
+  --gradient-accent: linear-gradient(135deg, #00a870 0%, #0077b6 50%, #7209b7 100%);
+  --gradient-dark: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+
+  // Background Colors
+  --color-bg: #f8f9fa;
+  --color-bg-elevated: #ffffff;
+  --color-card: #ffffff;
+  --color-card-hover: #f1f3f5;
+  --color-card-border: rgba(0, 0, 0, 0.05);
+
+  // Text Colors
+  --color-text-main: #111111;
+  --color-text-secondary: #4a5568;
+  --color-text-tertiary: #a0aec0;
+
+  // Glass Effect
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+
+  // Soft Shadows
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  /* Scrollbar override */
+  ::-webkit-scrollbar-track {
+    background: #f8f9fa;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(#f8f9fa, var(--color-accent), #f8f9fa);
+    border: 2px solid #f8f9fa;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -175,5 +221,14 @@ button, input, textarea, select {
   }
   100% {
     transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+.three-background-canvas {
+  background: radial-gradient(circle at 50% 50%, #050505 0%, #000000 100%);
+  transition: background 0.5s ease;
+  
+  [data-theme="light"] & {
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #e9ecef 100%);
   }
 }

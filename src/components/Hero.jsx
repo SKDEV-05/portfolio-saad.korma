@@ -87,35 +87,50 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container">
+      <div className="container centered-container">
+        {/* Centered Content */}
         <motion.div 
-          className="hero-content"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="hero-content centered-hero"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           style={{
             transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
           }}
         >
+          {/* Circular Glowing Avatar at the top (Up) */}
+          <motion.div 
+            className="hero-avatar"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            whileHover={{ scale: 1.05 }}
+          >
+             <img src={PROFILE.image} alt={PROFILE.name} />
+          </motion.div>
+
+          {/* Status Badge */}
+          <motion.div 
+            className="status-badge-hero"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            <span className="ping-dot"></span>
+            <span>{t('hero.badge')}</span>
+          </motion.div>
+
           <motion.h1
             ref={nameRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            data-text={`${t('hero.greeting')} ${t('hero.name')}`}
+            className="hero-name"
+            data-text={`${t('hero.name')} ${t('hero.lastName')}`}
           >
-            {t('hero.greeting')} <span>{t('hero.name')}</span>
+            {t('hero.name')} <span>{t('hero.lastName')}</span>
           </motion.h1>
           
-          <motion.div 
-            className="animated-subtitle"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-          >
-            <span className="typing-text">{displayedText}</span>
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -130,24 +145,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            <a href="#projects" className="btn primary">{t('hero.viewWork')}</a>
-            <a href="#about" className="btn secondary">{t('hero.aboutMe')}</a>
+            <a href="#projects" className="btn primary">{t('hero.viewWork')} →</a>
+            <a href="#contact" className="btn secondary">{t('hero.letsTalk') || t('nav.contact')}</a>
             <a href={cvFile} download="Saad_Korma_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn cv-btn">{t('hero.downloadCV')}</a>
           </motion.div>
-        </motion.div>
-
-        <motion.div 
-          className="hero-image"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          style={{
-            transform: `translate(${-mousePosition.x * 0.03}px, ${-mousePosition.y * 0.03}px)`
-          }}
-        >
-          <div className="img-box">
-             <img src={PROFILE.image} alt={PROFILE.name} />
-          </div>
         </motion.div>
       </div>
 

@@ -10,9 +10,6 @@ const TechStack = () => {
   const [viewMode, setViewMode] = useState('3d');
   const { t } = useLanguage();
 
-  // Duplicate the stack to create seamless loop for scrolling section
-  const displayStack = [...TECH_STACK, ...TECH_STACK];
-
   // List of categories for filtering
   const categories = ['all', 'frontend', 'backend', 'database', 'mobile'];
 
@@ -25,24 +22,6 @@ const TechStack = () => {
     <section className="tech-stack-section" id="stack">
       <div className="container">
         <h2 className="section-title">{t('techStack.title')}</h2>
-        
-        {/* Scrolling Tech Icons */}
-        <div className="scroll-wrapper" dir="ltr">
-          <div className="track">
-            {displayStack.map((tech, index) => (
-              <a 
-                href={tech.link}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="tech-card" 
-                key={index}
-              >
-                <tech.icon className="icon" />
-                <span>{tech.name}</span>
-              </a>
-            ))}
-          </div>
-        </div>
 
         {/* View Switcher */}
         <div className="view-switcher" dir="ltr">

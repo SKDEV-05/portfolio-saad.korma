@@ -54,7 +54,7 @@ const Footer = () => {
           <h3>Contact Me</h3>
           <div className="contact-info">
             <div><FaPhone /> {PROFILE.social.phone}</div>
-            <div><FaEnvelope /> saadsalhkorma@gmail.com</div>
+            <div><FaEnvelope /> saadkorma84a@gmail.com</div>
             <div>Available for Worldwide Projects</div>
           </div>
         </div>
@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Location</h3>
           <div className="contact-info">
-            <div>Marrakech, Morocco</div>
+            <div>Casablanca, Morocco</div>
             <p>Based in Morocco, working with clients globally.</p>
           </div>
         </div>
@@ -74,7 +74,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
         </div>
         <div className="designer">
-          Designed with ❤️ by Saad
+          Designed with ❤️ by Saad Korma 
         </div>
       </div>
     </footer>

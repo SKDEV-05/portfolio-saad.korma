@@ -27,7 +27,7 @@ const About = () => {
             rotateY: 15, 
             rotateX: -10,
             scale: 1.05,
-            boxShadow: '0 20px 40px rgba(0, 255, 136, 0.3)'
+            boxShadow: '0 20px 40px var(--color-accent-glow)'
           }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           style={{ perspective: 1000 }}

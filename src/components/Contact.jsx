@@ -7,12 +7,6 @@ import { FaWhatsapp, FaEnvelope, FaGithub, FaInstagram, FaMapMarkerAlt, FaClock 
 const Contact = () => {
   const { t } = useLanguage();
   const [time, setTime] = useState('');
-  const [formData, setFormData] = useState({
-    fullName: '',
-    telephone: '',
-    need: 'Website',
-    message: ''
-  });
 
   useEffect(() => {
     const updateTime = () => {
@@ -32,51 +26,6 @@ const Contact = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const message = `
-*New Contact from Portfolio*
-
-👤 Name: ${formData.fullName}
-📱 Phone: ${formData.telephone}
-🎯 Need: ${formData.need}
-
-💬 Message:
-${formData.message}
-    `.trim();
-
-    const phoneNumber = '212670955826';
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, '_blank');
-    
-    setFormData({
-      fullName: '',
-      telephone: '',
-      need: 'Website',
-      message: ''
-    });
-  };
-
-  const handleEmailSubmit = () => {
-    const subject = `New Contact from Portfolio: ${formData.need}`;
-    const body = `Name: ${formData.fullName}\nPhone: ${formData.telephone}\nNeed: ${formData.need}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:saadkorma84@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    setFormData({
-      fullName: '',
-      telephone: '',
-      need: 'Website',
-      message: ''
-    });
-  };
-
   return (
     <section className="section contact-section" id="contact">
       <motion.div
@@ -86,10 +35,10 @@ ${formData.message}
         transition={{ duration: 0.6 }}
       >
         <h2 className="contact-title">
-          {t('contact.title')} <span>{t('contact.titleWebsite')}</span> {t('contact.titleOr')} <span>{t('contact.titleApp')}</span>
+          {t('contact.title')}
         </h2>
         
-        <div className="contact-grid">
+        <div className="contact-container-centered">
           <div className="info-column">
             <div className="info-card clock-card">
               <div className="card-header">
@@ -133,74 +82,6 @@ ${formData.message}
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="form-column">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="fullName">{t('contact.fullName')} *</label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  required
-                  placeholder={t('contact.placeholderName')}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="telephone">{t('contact.telephone')} *</label>
-                <input
-                  type="tel"
-                  id="telephone"
-                  name="telephone"
-                  value={formData.telephone}
-                  onChange={handleChange}
-                  required
-                  placeholder={t('contact.placeholderPhone')}
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="need">{t('contact.need')} *</label>
-                <select
-                  id="need"
-                  name="need"
-                  value={formData.need}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="Website">{t('contact.needWebsite')}</option>
-                  <option value="Mobile App">{t('contact.needMobile')}</option>
-                  <option value="Both">{t('contact.needBoth')}</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">{t('contact.message')}</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  placeholder={t('contact.placeholderMessage')}
-                ></textarea>
-              </div>
-
-              <div className="form-buttons">
-                <button type="submit" className="submit-btn whatsapp">
-                  <FaWhatsapp />
-                  <span>{t('contact.submit')}</span>
-                </button>
-                <button type="button" className="submit-btn email" onClick={handleEmailSubmit}>
-                  <FaEnvelope />
-                  <span>{t('contact.directEmail')}</span>
-                </button>
-              </div>
-            </form>
           </div>
         </div>
       </motion.div>

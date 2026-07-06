@@ -5,7 +5,7 @@ import { TECH_STACK } from '../data/index.jsx';
 import * as THREE from 'three';
 import '../styles/techglobe.scss';
 
-function GlobeCore() {
+function GlobeCore({ isLight }) {
   const meshRef = useRef();
   const pointsRef = useRef();
 
@@ -24,19 +24,30 @@ function GlobeCore() {
       {/* Central Digital Wireframe Sphere */}
       <mesh ref={meshRef}>
         <sphereGeometry args={[2.0, 20, 20]} />
-        <meshBasicMaterial color="#00ff88" wireframe={true} transparent={true} opacity={0.06} />
+        <meshBasicMaterial 
+          color={isLight ? "#00aa55" : "#00ff88"} 
+          wireframe={true} 
+          transparent={true} 
+          opacity={isLight ? 0.15 : 0.06} 
+        />
       </mesh>
 
       {/* Surface Particle Glow Dots */}
       <points ref={pointsRef}>
         <sphereGeometry args={[2.2, 36, 36]} />
-        <pointsMaterial color="#00d4ff" size={0.03} sizeAttenuation={true} transparent={true} opacity={0.15} />
+        <pointsMaterial 
+          color={isLight ? "#0088cc" : "#00d4ff"} 
+          size={0.03} 
+          sizeAttenuation={true} 
+          transparent={true} 
+          opacity={isLight ? 0.35 : 0.15} 
+        />
       </points>
     </group>
   );
 }
 
-function TechItems({ activeCategory }) {
+function TechItems({ activeCategory, isLight }) {
   const groupRef = useRef();
 
   // Filter skills based on category selected in parent
@@ -70,7 +81,7 @@ function TechItems({ activeCategory }) {
 
   return (
     <group ref={groupRef}>
-      <GlobeCore />
+      <GlobeCore isLight={isLight} />
       {items.map((item, index) => {
         const IconComponent = item.tech.icon;
         return (
@@ -98,6 +109,17 @@ function TechItems({ activeCategory }) {
 }
 
 export default function TechGlobe({ activeCategory }) {
+  const [isLight, setIsLight] = React.useState(false);
+  
+  React.useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsLight(document.documentElement.getAttribute('data-theme') === 'light');
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    setIsLight(document.documentElement.getAttribute('data-theme') === 'light');
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="tech-globe-container">
       <Canvas
@@ -106,7 +128,7 @@ export default function TechGlobe({ activeCategory }) {
         style={{ width: '100%', height: '100%' }}
       >
         <ambientLight intensity={0.8} />
-        <TechItems activeCategory={activeCategory} />
+        <TechItems activeCategory={activeCategory} isLight={isLight} />
         <OrbitControls
           enableZoom={false}
           autoRotate={true}

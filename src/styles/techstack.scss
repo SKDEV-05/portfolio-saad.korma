@@ -1,7 +1,7 @@
 @import './techglobe.scss';
 
 .tech-stack-section {
-  background: var(--color-bg);
+  background: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
@@ -33,122 +33,7 @@
     background-clip: text;
   }
 
-  .scroll-wrapper {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    padding: 1rem 0 3rem;
-    direction: ltr;
-    
-    // Mask for fading edges
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 
-    &:hover .track {
-      animation-play-state: paused;
-    }
-  }
-
-  .track {
-    display: flex;
-    gap: 2rem;
-    animation: scroll 30s linear infinite;
-    width: max-content;
-    padding-left: 2rem;
-  }
-
-  .tech-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 1.8rem 2.2rem;
-    min-width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    transition: all var(--transition-smooth);
-    cursor: pointer;
-    animation: float 6s ease-in-out infinite;
-    position: relative;
-    overflow: hidden;
-
-    // Gradient border on hover
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 16px;
-      padding: 2px;
-      background: var(--gradient-primary);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-      opacity: 0;
-      transition: opacity var(--transition-smooth);
-    }
-
-    // Random delays for each card
-    &:nth-child(1) { animation-delay: 0s; }
-    &:nth-child(2) { animation-delay: 0.5s; }
-    &:nth-child(3) { animation-delay: 1s; }
-    &:nth-child(4) { animation-delay: 1.5s; }
-    &:nth-child(5) { animation-delay: 2s; }
-    &:nth-child(6) { animation-delay: 2.5s; }
-    &:nth-child(7) { animation-delay: 3s; }
-    &:nth-child(8) { animation-delay: 3.5s; }
-    &:nth-child(9) { animation-delay: 4s; }
-    &:nth-child(10) { animation-delay: 4.5s; }
-    &:nth-child(11) { animation-delay: 5s; }
-
-    .icon {
-      font-size: 2.5rem;
-      color: var(--color-text-secondary);
-      transition: all var(--transition-smooth);
-    }
-    
-    span {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--color-text-secondary);
-      transition: all var(--transition-smooth);
-      letter-spacing: 0.3px;
-    }
-
-    &:hover {
-      transform: translateY(-15px) scale(1.08);
-      background: rgba(0, 255, 136, 0.08);
-      box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
-      animation-play-state: paused;
-
-      &::before {
-        opacity: 1;
-      }
-
-      .icon {
-        color: var(--color-accent);
-        filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.9));
-        transform: scale(1.25) rotate(5deg);
-      }
-      
-      span {
-        color: var(--color-accent);
-        transform: translateY(-2px);
-      }
-    }
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
 
   // View Switcher
   .view-switcher {
@@ -339,8 +224,59 @@
   }
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } 
+[data-theme="light"] {
+  .tech-stack-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    .view-switcher {
+      background: rgba(0, 0, 0, 0.02);
+      border-color: rgba(0, 0, 0, 0.05);
+
+      .switcher-btn {
+        &.active {
+          box-shadow: 0 8px 20px rgba(0, 168, 112, 0.25);
+          color: #ffffff;
+        }
+      }
+    }
+
+    .category-filters {
+      .filter-btn {
+        background: rgba(0, 0, 0, 0.02);
+        border-color: rgba(0, 0, 0, 0.05);
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.04);
+          border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &.active {
+          box-shadow: 0 8px 20px rgba(0, 168, 112, 0.25);
+          color: #ffffff;
+        }
+      }
+    }
+
+    .skills-grid {
+      .skill-item {
+        &:hover {
+          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 168, 112, 0.03);
+          border-color: rgba(0, 168, 112, 0.2);
+          background: rgba(0, 168, 112, 0.02);
+
+          .skill-icon {
+            filter: drop-shadow(0 0 5px rgba(0, 168, 112, 0.2));
+          }
+
+          .skill-category-tag {
+            background: rgba(0, 168, 112, 0.08);
+          }
+        }
+      }
+    }
+  }
 }
+
+
 

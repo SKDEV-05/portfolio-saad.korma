@@ -1,5 +1,5 @@
 .services-section {
-  background: var(--color-bg);
+  background: transparent;
   position: relative;
   overflow: hidden;
 
@@ -158,6 +158,67 @@
         }
         h3 {
           color: var(--color-accent-tertiary);
+        }
+      }
+    }
+  }
+}
+
+[data-theme="light"] {
+  .service-card {
+    &.glow-emerald {
+      &:hover {
+        background: rgba(0, 168, 112, 0.02);
+        border-color: rgba(0, 168, 112, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 168, 112, 0.04);
+        
+        .icon-wrapper {
+          background: rgba(0, 168, 112, 0.06);
+          border-color: var(--color-accent);
+        }
+        .service-icon {
+          filter: drop-shadow(0 0 5px rgba(0, 168, 112, 0.2));
+        }
+      }
+    }
+
+    &.glow-cyan {
+      &::before {
+        background: var(--gradient-primary);
+      }
+      .service-icon {
+        color: var(--color-accent-secondary);
+      }
+      &:hover {
+        background: rgba(0, 119, 182, 0.02);
+        border-color: rgba(0, 119, 182, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(0, 119, 182, 0.04);
+
+        .icon-wrapper {
+          background: rgba(0, 119, 182, 0.06);
+          border-color: var(--color-accent-secondary);
+        }
+        .service-icon {
+          filter: drop-shadow(0 0 5px rgba(0, 119, 182, 0.2));
+        }
+      }
+    }
+
+    &.glow-purple {
+      .service-icon {
+        color: var(--color-accent-tertiary);
+      }
+      &:hover {
+        background: rgba(114, 9, 183, 0.02);
+        border-color: rgba(114, 9, 183, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05), 0 5px 15px rgba(114, 9, 183, 0.04);
+
+        .icon-wrapper {
+          background: rgba(114, 9, 183, 0.06);
+          border-color: var(--color-accent-tertiary);
+        }
+        .service-icon {
+          filter: drop-shadow(0 0 5px rgba(114, 9, 183, 0.2));
         }
       }
     }

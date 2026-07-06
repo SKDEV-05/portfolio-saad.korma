@@ -3,22 +3,48 @@ export const translations = {
     // Navbar
     nav: {
       home: 'Home',
+      about: 'About',
+      journey: 'Journey',
       services: 'Services',
       skills: 'Skills',
       projects: 'Projects',
-      about: 'About',
       contact: 'Contact'
     },
     // Hero
     hero: {
       title: 'Full-Stack Web & Mobile Developer',
       greeting: "I'm",
-      name: 'Saad Korma',
+      name: 'SAAD',
+      lastName: 'KORMA.',
+      badge: 'DISPONIBLE — OPEN TO WORK',
       subtitle: 'Full Stack Developer (Mobile & Web)',
-      description: 'I build full-stack web and mobile applications, from backend APIs to frontend interfaces, focusing on performance and real-world solutions. I turn complex problems into smooth, efficient code.',
-      viewWork: 'View Work',
+      description: '20-year-old Full-Stack Developer from Morocco. Passionate about building fast, scalable web applications.',
+      viewWork: 'View Projects',
       aboutMe: 'About Me',
       downloadCV: 'Download CV'
+    },
+    // Journey
+    journey: {
+      title: 'My Journey',
+      subtitle: 'A timeline of my growth, education, and professional experience.',
+      bac: {
+        title: 'Baccalaureate in Physics & Chemistry',
+        institution: 'High School, Had Soualem',
+        date: '2023',
+        description: 'Completed my high school diploma specializing in Physics and Chemistry with honors (Assez Bien) in Had Soualem.'
+      },
+      digitalDev: {
+        title: 'Digital Development - Web Full Stack',
+        institution: 'CMC Casablanca-Settat, Nouaceur',
+        date: '2024 - July 2026 (Ongoing)',
+        description: 'Pursuing specialized technical training in Digital Development, Web Full Stack option, at the Cité des Métiers et des Compétences (CMC) Casablanca-Settat in Nouaceur.'
+      },
+      internship: {
+        title: 'Mobile App Developer Internship',
+        institution: "Dev's Empire, Rabat",
+        date: 'Feb 20, 2026 - Mar 20, 2026',
+        description: "Completed a professional internship as a mobile app developer at Dev's Empire in Rabat, designing and building the cross-platform mobile application 'Toovago'."
+      }
     },
     // Tech Stack
     techStack: {
@@ -58,6 +84,23 @@ export const translations = {
     // Projects
     projects: {
       title: 'Featured Projects',
+      subtitle: 'A collection of my best work — from AI-powered platforms to full-stack web apps.',
+      featuredLabel: 'New & Featured',
+      otherLabel: 'Other Projects',
+      showPrevious: 'Show Previous Projects',
+      hidePrevious: 'Hide Previous Projects',
+      skelectronics: {
+        title: 'SKElectronics',
+        description: 'Full-stack e-commerce platform for electronics — phones, laptops and more. Features a sleek dark UI, product catalog, shopping cart, multi-language support, and a full admin dashboard.'
+      },
+      endotalent: {
+        title: 'EndoTalent',
+        description: 'AI-powered football talent scouting platform. Uses MediaPipe for real-time body pose detection and Gemini AI to analyze player performance, generate ratings, and classify player profiles.'
+      },
+      safetyai: {
+        title: 'SafetyAI',
+        description: 'AI sports medical platform for injury prevention and recovery. Detects body posture using MediaPipe, analyzes injury risks (ACL/MCL), predicts return-to-play timelines, and processes medical images with Gemini AI.'
+      },
       ecommerce: {
         title: 'E-commerce Platform',
         description: 'A full-featured e-commerce solution with product management, cart functionality, and secure checkout as well as an admin dashboard.'
@@ -71,6 +114,20 @@ export const translations = {
         description: 'Real-time social platform featuring live chat, posts, and user interactions without page refreshes, powered by WebSockets.'
       }
     },
+    githubStats: {
+      title: 'GitHub Code Activity',
+      subtitle: 'Real-time statistics and contribution history directly from my GitHub profile.',
+      loading: 'Loading GitHub data...',
+      error: 'Could not load GitHub stats.',
+      repositories: 'Repositories',
+      stars: 'Stars Received',
+      forks: 'Forks Created',
+      followers: 'Followers',
+      contributionTitle: 'Contribution Calendar',
+      languagesTitle: 'Top Languages Breakdown',
+      joined: 'Joined GitHub',
+      viewProfile: 'View GitHub Profile'
+    },
     // About
     about: {
       title: 'About Me',
@@ -80,10 +137,10 @@ export const translations = {
     },
     // Contact
     contact: {
-      title: 'I am ready to build',
-      titleWebsite: 'your website',
-      titleOr: 'or',
-      titleApp: 'your application',
+      title: 'Get in Touch',
+      titleWebsite: '',
+      titleOr: '',
+      titleApp: '',
       fullName: 'Full Name',
       telephone: 'Telephone',
       need: 'I Need',
@@ -113,21 +170,47 @@ export const translations = {
   fr: {
     nav: {
       home: 'Accueil',
+      about: 'À propos',
+      journey: 'Parcours',
       services: 'Services',
       skills: 'Compétences',
       projects: 'Projets',
-      about: 'À propos',
       contact: 'Contact'
     },
     hero: {
       title: 'Développeur Full-Stack Web & Mobile',
       greeting: "Je suis",
-      name: 'Saad Korma',
+      name: 'SAAD',
+      lastName: 'KORMA.',
+      badge: 'DISPONIBLE — OPEN TO WORK',
       subtitle: 'Développeur Full Stack (Mobile & Web)',
-      description: 'Je crée des applications web et mobiles full-stack, des API backend aux interfaces frontend, en mettant l\'accent sur les performances et les solutions réelles. Je transforme les problèmes complexes en code fluide et efficace.',
-      viewWork: 'Voir mes travaux',
+      description: 'Développeur Full-Stack de 20 ans originaire du Maroc. Passionné par la création d\'applications web rapides et évolutives.',
+      viewWork: 'Voir Projets',
       aboutMe: 'À propos',
       downloadCV: 'Télécharger le CV'
+    },
+    // Journey
+    journey: {
+      title: 'Mon Parcours',
+      subtitle: 'Une chronologie de ma croissance, de mon éducation et de mes expériences.',
+      bac: {
+        title: 'Baccalauréat en Sciences Physiques & Chimiques',
+        institution: 'Lycée, Had Soualem',
+        date: '2023',
+        description: 'Obtention du baccalauréat scientifique, option Physique-Chimie, avec mention Assez Bien à Had Soualem.'
+      },
+      digitalDev: {
+        title: 'Développement Digital - Web Full Stack',
+        institution: 'CMC Casablanca-Settat, Nouaceur',
+        date: '2024 - Juillet 2026 (En cours)',
+        description: 'Formation de Technicien Spécialisé en Développement Digital, option Web Full Stack, à la Cité des Métiers et des Compétences (CMC) Casablanca-Settat à Nouaceur.'
+      },
+      internship: {
+        title: 'Stage Développeur Mobile',
+        institution: "Dev's Empire, Rabat",
+        date: '20 Fév 2026 - 20 Mar 2026',
+        description: "Stage professionnel axé sur le développement d'une application mobile multiplateforme nommée 'Toovago' chez Dev's Empire à Rabat."
+      }
     },
     techStack: {
       title: 'Technologies & Outils',
@@ -166,6 +249,23 @@ export const translations = {
     // Projects
     projects: {
       title: 'Projets en vedette',
+      subtitle: 'Une collection de mes meilleures réalisations — des plateformes IA aux applications web full-stack.',
+      featuredLabel: 'Nouveaux & En vedette',
+      otherLabel: 'Autres Projets',
+      showPrevious: 'Afficher les projets précédents',
+      hidePrevious: 'Masquer les projets précédents',
+      skelectronics: {
+        title: 'SKElectronics',
+        description: 'Plateforme e-commerce full-stack pour l\'électronique — téléphones, laptops et plus. UI sombre élégante, catalogue produits, panier, multi-langue et tableau de bord admin.'
+      },
+      endotalent: {
+        title: 'EndoTalent',
+        description: 'Plateforme IA de détection de talents footballistiques. Utilise MediaPipe pour la détection de pose corporelle en temps réel et Gemini AI pour analyser les performances des joueurs.'
+      },
+      safetyai: {
+        title: 'SafetyAI',
+        description: 'Plateforme médicale sportive IA pour la prévention et la récupération des blessures. Détecte la posture corporelle via MediaPipe, analyse les risques (LCA/LCM), et prédit les délais de retour au jeu.'
+      },
       ecommerce: {
         title: 'Plateforme E-commerce',
         description: 'Une solution e-commerce complète avec gestion des produits, fonctionnalité de panier et paiement sécurisé ainsi qu\'un tableau de bord administrateur.'
@@ -179,6 +279,20 @@ export const translations = {
         description: 'Plateforme sociale en temps réel avec chat en direct, publications et interactions utilisateur sans rechargement de page, alimentée par WebSockets.'
       }
     },
+    githubStats: {
+      title: 'Activité GitHub',
+      subtitle: 'Statistiques en temps réel et historique des contributions de mon profil GitHub.',
+      loading: 'Chargement des données GitHub...',
+      error: 'Impossible de charger les statistiques GitHub.',
+      repositories: 'Dépôts',
+      stars: 'Étoiles Reçues',
+      forks: 'Forks Créés',
+      followers: 'Abonnés',
+      contributionTitle: 'Calendrier des contributions',
+      languagesTitle: 'Répartition des langages',
+      joined: 'Rejoint GitHub',
+      viewProfile: 'Voir le profil GitHub'
+    },
     about: {
       title: 'À propos de moi',
       p1: 'Je suis <strong>Saad Korma</strong>, un <strong>Développeur Full-Stack Web & Mobile</strong> dévoué basé à Casablanca, Maroc. Mon parcours dans le développement est motivé par une passion pour la création de solutions réelles et tangibles plutôt que de simples démos.',
@@ -186,10 +300,10 @@ export const translations = {
       p3: 'J\'améliore continuellement mes compétences, je reste à jour avec les dernières technologies (normes 2026) et je recherche des défis qui repoussent mes limites d\'ingénierie. Je suis prêt à vous aider à transformer vos idées en logiciels fonctionnels déployés.'
     },
     contact: {
-      title: 'Je suis prêt à créer',
-      titleWebsite: 'votre site web',
-      titleOr: 'ou',
-      titleApp: 'votre application',
+      title: 'Contactez-moi',
+      titleWebsite: '',
+      titleOr: '',
+      titleApp: '',
       fullName: 'Nom complet',
       telephone: 'Téléphone',
       need: 'J\'ai besoin',
@@ -218,21 +332,47 @@ export const translations = {
   es: {
     nav: {
       home: 'Inicio',
+      about: 'Acerca de mí',
+      journey: 'Trayectoria',
       services: 'Servicios',
       skills: 'Habilidades',
       projects: 'Proyectos',
-      about: 'Acerca de',
       contact: 'Contacto'
     },
     hero: {
       title: 'Desarrollador Full-Stack Web & Móvil',
       greeting: "Soy",
-      name: 'Saad Korma',
+      name: 'SAAD',
+      lastName: 'KORMA.',
+      badge: 'DISPONIBLE — OPEN TO WORK',
       subtitle: 'Desarrollador Full Stack (Móvil y Web)',
-      description: 'Construyo aplicaciones web y móviles full-stack, desde APIs backend hasta interfaces frontend, enfocándome en rendimiento y soluciones del mundo real. Convierto problemas complejos en código fluido y eficiente.',
-      viewWork: 'Ver trabajos',
+      description: 'Desarrollador Full-Stack de 20 años de Marruecos. Apasionado por la creación de aplicaciones web rápidas y escalables.',
+      viewWork: 'Ver Proyectos',
       aboutMe: 'Acerca de mí',
       downloadCV: 'Descargar CV'
+    },
+    // Journey
+    journey: {
+      title: 'Mi Trayectoria',
+      subtitle: 'Una cronología de mi crecimiento, educación y experiencia profesional.',
+      bac: {
+        title: 'Bachillerato en Física y Química',
+        institution: 'Liceo, Had Soualem',
+        date: '2023',
+        description: 'Completé mi diploma de bachillerato con especialización en Física y Química con honores (Assez Bien) en Had Soualem.'
+      },
+      digitalDev: {
+        title: 'Estudios de Desarrollo Digital',
+        institution: 'CMC Casablanca-Settat, Nouaceur',
+        date: '2024 - Julio 2026 (En curso)',
+        description: 'Cursando formación técnica especializada en Desarrollo Digital, opción Web Full Stack, en la Cité des Métiers et des Compétences (CMC) Casablanca-Settat en Nouaceur.'
+      },
+      internship: {
+        title: 'Prácticas de Desarrollo de Apps Móviles',
+        institution: "Dev's Empire, Rabat",
+        date: '20 Feb 2026 - 20 Mar 2026',
+        description: "Completé unas prácticas profesionales desarrollando una aplicación móvil multiplataforma llamada 'Toovago' en Dev's Empire en Rabat."
+      }
     },
     techStack: {
       title: 'Tecnologías y Herramientas',
@@ -271,6 +411,23 @@ export const translations = {
     // Projects
     projects: {
       title: 'Proyectos destacados',
+      subtitle: 'Una colección de mis mejores trabajos — desde plataformas de IA hasta aplicaciones web full-stack.',
+      featuredLabel: 'Nuevos y Destacados',
+      otherLabel: 'Otros Proyectos',
+      showPrevious: 'Mostrar proyectos anteriores',
+      hidePrevious: 'Ocultar proyectos anteriores',
+      skelectronics: {
+        title: 'SKElectronics',
+        description: 'Plataforma e-commerce full-stack para electrónica — teléfonos, laptops y más. UI oscura elegante, catálogo de productos, carrito, multilingüe y panel de administración completo.'
+      },
+      endotalent: {
+        title: 'EndoTalent',
+        description: 'Plataforma IA de detección de talentos futbolísticos. Usa MediaPipe para la detección de pose corporal en tiempo real y Gemini AI para analizar el rendimiento de jugadores y generar clasificaciones.'
+      },
+      safetyai: {
+        title: 'SafetyAI',
+        description: 'Plataforma médica deportiva con IA para la prevención y recuperación de lesiones. Detecta la postura con MediaPipe, analiza riesgos (LCA/LCM) y predice tiempos de regreso al juego.'
+      },
       ecommerce: {
         title: 'Plataforma E-commerce',
         description: 'Una solución de comercio electrónico completa con gestión de productos, funcionalidad de carrito y pago seguro, así como un panel de administración.'
@@ -284,6 +441,20 @@ export const translations = {
         description: 'Plataforma social en tiempo real con chat en vivo, publicaciones e interacciones de usuarios sin recargas de página, impulsada por WebSockets.'
       }
     },
+    githubStats: {
+      title: 'Actividad de GitHub',
+      subtitle: 'Estadísticas en tiempo real e historial de contribuciones directamente de mi perfil de GitHub.',
+      loading: 'Cargando datos de GitHub...',
+      error: 'No se pudieron cargar las estadísticas de GitHub.',
+      repositories: 'Repositorios',
+      stars: 'Estrellas Recibidas',
+      forks: 'Forks Creados',
+      followers: 'Seguidores',
+      contributionTitle: 'Calendario de Contribuciones',
+      languagesTitle: 'Desglose de lenguajes',
+      joined: 'Se unió a GitHub',
+      viewProfile: 'Ver perfil de GitHub'
+    },
     about: {
       title: 'Acerca de mí',
       p1: 'Soy <strong>Saad Korma</strong>, un <strong>Desarrollador Full-Stack Web & Móvil</strong> dedicado con sede en Casablanca, Marruecos. Mi viaje en el desarrollo está impulsado por una pasión por construir soluciones reales y tangibles en lugar de solo demos.',
@@ -291,10 +462,10 @@ export const translations = {
       p3: 'Estoy mejorando continuamente mis habilidades, manteniéndome actualizado con las últimas tecnologías (estándares 2026) y buscando desafíos que empujen mis límites de ingeniería. Estoy listo para ayudarte a convertir tus ideas en software funcional desplegado.'
     },
     contact: {
-      title: 'Estoy listo para construir',
-      titleWebsite: 'tu sitio web',
-      titleOr: 'o',
-      titleApp: 'tu aplicación',
+      title: 'Ponte en contacto',
+      titleWebsite: '',
+      titleOr: '',
+      titleApp: '',
       fullName: 'Nombre completo',
       telephone: 'Teléfono',
       need: 'Necesito',
@@ -323,21 +494,47 @@ export const translations = {
   ar: {
     nav: {
       home: 'الرئيسية',
+      about: 'عني',
+      journey: 'مسيرتي',
       services: 'الخدمات',
       skills: 'المهارات',
       projects: 'المشاريع',
-      about: 'عني',
       contact: 'اتصل'
     },
     hero: {
       title: 'مطور ويب وتطبيقات موبايل متكامل',
       greeting: "أنا",
-      name: 'سعد كرمة',
+      name: 'سعد',
+      lastName: 'كرمة.',
+      badge: 'DISPONIBLE — OPEN TO WORK',
       subtitle: 'مطور فول ستاك (ويب وموبايل)',
-      description: 'أقوم ببناء تطبيقات ويب وموبايل متكاملة، من واجهات برمجة التطبيقات الخلفية إلى الواجهات الأمامية، مع التركيز على الأداء والحلول الواقعية. أحول المشاكل المعقدة إلى كود سلس وفعال.',
-      viewWork: 'عرض الأعمال',
+      description: 'مطور ويب متكامل (Full-Stack) يبلغ من العمر 20 عاماً من المغرب. شغوف ببناء تطبيقات ويب سريعة وقابلة للتوسع.',
+      viewWork: 'عرض المشاريع',
       aboutMe: 'عني',
       downloadCV: 'تحميل السيرة الذاتية'
+    },
+    // Journey
+    journey: {
+      title: 'مسيرتي',
+      subtitle: 'تسلسل زمني لتعليمي وتطوري وخبراتي المهنية.',
+      bac: {
+        title: 'شهادة البكالوريا في العلوم الفيزيائية والكيميائية',
+        institution: 'الثانوية التأهيلية، حد السوالم',
+        date: '2023',
+        description: 'الحصول على شهادة البكالوريا، تخصص العلوم الفيزيائية والكيميائية، بميزة مستحسن بحد السوالم.'
+      },
+      digitalDev: {
+        title: 'شعبة التطوير الرقمي - مطور متكامل',
+        institution: 'مدينة المهن والكفاءات الدار البيضاء-سطات، النواصر',
+        date: '2024 - يوليو 2026 (في طور التكوين)',
+        description: 'تكوين تقني متخصص في التطوير الرقمي، خيار ويب متكامل (Web Full Stack)، بمدينة المهن والكفاءات (CMC) الدار البيضاء-سطات في النواصر.'
+      },
+      internship: {
+        title: 'تدريب في تطوير تطبيقات الموبايل',
+        institution: "Dev's Empire، الرباط",
+        date: '20 فبراير 2026 - 20 مارس 2026',
+        description: "إنجاز تدريب مهني في تطوير وتصميم تطبيق موبايل باسم 'Toovago' بشركة Dev's Empire في الرباط."
+      }
     },
     techStack: {
       title: 'التقنيات والأدوات',
@@ -376,6 +573,23 @@ export const translations = {
     // Projects
     projects: {
       title: 'المشاريع المميزة',
+      subtitle: 'مجموعة من أفضل أعمالي — من منصات الذكاء الاصطناعي إلى تطبيقات الويب المتكاملة.',
+      featuredLabel: 'جديد ومميز',
+      otherLabel: 'مشاريع أخرى',
+      showPrevious: 'عرض المشاريع السابقة',
+      hidePrevious: 'إخفاء المشاريع السابقة',
+      skelectronics: {
+        title: 'SKElectronics',
+        description: 'منصة تجارة إلكترونية متكاملة للإلكترونيات — هواتف ولاب توب وأكثر. واجهة داكنة أنيقة، كتالوج منتجات، سلة تسوق، دعم متعدد اللغات، ولوحة تحكم إدارية كاملة.'
+      },
+      endotalent: {
+        title: 'EndoTalent',
+        description: 'منصة ذكاء اصطناعي لاكتشاف المواهب الكروية. تستخدم MediaPipe للكشف عن وضعية الجسم في الوقت الفعلي وGemini AI لتحليل أداء اللاعبين وتصنيفهم وتقييمهم.'
+      },
+      safetyai: {
+        title: 'SafetyAI',
+        description: 'منصة طبية رياضية بالذكاء الاصطناعي للوقاية من الإصابات والتعافي. تكتشف وضعية الجسم عبر MediaPipe، وتحلل مخاطر الإصابة (الرباط الصليبي)، وتتنبأ بأوقات العودة للملاعب.'
+      },
       ecommerce: {
         title: 'منصة التجارة الإلكترونية',
         description: 'حل تجارة إلكترونية متكامل مع إدارة المنتجات ووظائف السلة والدفع الآمن بالإضافة إلى لوحة تحكم الإدارة.'
@@ -389,6 +603,20 @@ export const translations = {
         description: 'منصة اجتماعية في الوقت الفعلي تتضمن دردشة مباشرة ومنشورات وتفاعلات المستخدمين بدون تحديث الصفحة، مدعومة بـ WebSockets.'
       }
     },
+    githubStats: {
+      title: 'نشاط GitHub',
+      subtitle: 'إحصائيات مباشرة وسجل المساهمات مباشرة من ملفي الشخصي على GitHub.',
+      loading: 'جاري تحميل بيانات GitHub...',
+      error: 'تعذر تحميل إحصائيات GitHub.',
+      repositories: 'المستودعات',
+      stars: 'النجوم المستلمة',
+      forks: 'المستودعات المنسوخة',
+      followers: 'المتابعون',
+      contributionTitle: 'تقويم المساهمات',
+      languagesTitle: 'توزيع لغات البرمجة',
+      joined: 'انضم إلى GitHub',
+      viewProfile: 'عرض ملف GitHub الشخصي'
+    },
     about: {
       title: 'عني',
       p1: 'أنا <strong>سعد كرمة</strong>، <strong>مطور ويب وتطبيقات موبايل متكامل</strong> مقيم في الدار البيضاء، المغرب. رحلتي في التطوير مدفوعة بشغف لبناء حلول حقيقية وملموسة بدلاً من مجرد عروض توضيحية.',
@@ -396,10 +624,10 @@ export const translations = {
       p3: 'أقوم بتحسين مهاراتي باستمرار، والبقاء على اطلاع بأحدث التقنيات (معايير 2026)، والبحث عن التحديات التي تدفع حدودي الهندسية. أنا مستعد لمساعدتك في تحويل أفكارك إلى برامج وظيفية منشورة.'
     },
     contact: {
-      title: 'أنا مستعد لبناء',
-      titleWebsite: 'موقعك الإلكتروني',
-      titleOr: 'أو',
-      titleApp: 'تطبيقك',
+      title: 'اتصل بي',
+      titleWebsite: '',
+      titleOr: '',
+      titleApp: '',
       fullName: 'الاسم الكامل',
       telephone: 'الهاتف',
       need: 'أحتاج',

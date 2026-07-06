@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect } from 'react';
+import React, { useRef, useMemo, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -7,6 +7,17 @@ function InteractiveParticles() {
   const pointsRef2 = useRef();
   const scrollY = useRef(0);
   const targetScrollY = useRef(0);
+  
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsLight(document.documentElement.getAttribute('data-theme') === 'light');
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    setIsLight(document.documentElement.getAttribute('data-theme') === 'light');
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -131,12 +142,12 @@ function InteractiveParticles() {
         </bufferGeometry>
         <pointsMaterial
           size={0.025}
-          color="#00ff88"
+          color={isLight ? "#00aa55" : "#00ff88"}
           sizeAttenuation={true}
           transparent={true}
-          opacity={0.4}
+          opacity={isLight ? 0.65 : 0.4}
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
+          blending={isLight ? THREE.NormalBlending : THREE.AdditiveBlending}
         />
       </points>
 
@@ -152,12 +163,12 @@ function InteractiveParticles() {
         </bufferGeometry>
         <pointsMaterial
           size={0.035}
-          color="#00d4ff"
+          color={isLight ? "#0088cc" : "#00d4ff"}
           sizeAttenuation={true}
           transparent={true}
-          opacity={0.5}
+          opacity={isLight ? 0.75 : 0.5}
           depthWrite={false}
-          blending={THREE.AdditiveBlending}
+          blending={isLight ? THREE.NormalBlending : THREE.AdditiveBlending}
         />
       </points>
     </group>
@@ -166,15 +177,14 @@ function InteractiveParticles() {
 
 export default function ThreeBackground() {
   return (
-    <div style={{ 
+    <div className="three-background-canvas" style={{ 
       position: 'fixed', 
       top: 0, 
       left: 0, 
       width: '100vw', 
       height: '100vh', 
       zIndex: -2, 
-      pointerEvents: 'none',
-      background: 'radial-gradient(circle at 50% 50%, #050505 0%, #000000 100%)' 
+      pointerEvents: 'none'
     }}>
       <Canvas camera={{ position: [0, 0, 4.5], fov: 60 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.5} />

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
+import MyJourney from './components/MyJourney';
 import Services from './components/Services';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
-import About from './components/About';
+import GitHubStats from './components/GitHubStats';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ThreeBackground from './components/ThreeBackground';
@@ -17,6 +19,17 @@ import BackToTop from './components/BackToTop';
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  // Initialize theme on mount (for loading screen and initial render)
+  useEffect(() => {
+    const getInitialTheme = () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) return savedTheme;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return prefersDark ? 'dark' : 'light';
+    };
+    document.documentElement.setAttribute('data-theme', getInitialTheme());
+  }, []);
   
   // Basic SEO setup in useEffect or Helmet (if installed, but native DOM maniup is fine for simple portfolio)
   useEffect(() => {
@@ -44,10 +57,12 @@ function App() {
       <ThreeBackground />
       <Navbar />
       <Hero />
+      <About />
+      <MyJourney />
       <Services />
       <TechStack />
       <Projects />
-      <About />
+      <GitHubStats />
       <Contact />
       <Footer />
       <BackToTop />
