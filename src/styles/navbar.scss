@@ -2,12 +2,9 @@
 .navbar {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  right: auto;
-  width: calc(100% - 6rem);
-  max-width: 1400px;
-  margin: 1rem auto 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -16,42 +13,35 @@
   background: rgba(15, 15, 15, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: all var(--transition-smooth);
 
   &.scrolled {
-    margin: 0.6rem auto 0;
     padding: 0.8rem 2rem;
     background: rgba(15, 15, 15, 0.95);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 
     @media (max-width: 768px) {
-      margin: 0.4rem auto 0;
-      padding: 0.7rem 1.5rem;
+      padding: 0.7rem 1.25rem;
     }
   }
 
   &.drawer-open {
     background: transparent !important;
-    border: 1px solid transparent !important;
+    border-bottom: 1px solid transparent !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
 
   @media (max-width: 768px) {
-    width: calc(100% - 1.5rem);
-    padding: 0.7rem 1rem;
-    margin: 0.5rem auto 0;
-    border-radius: 16px;
+    padding: 0.7rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   @media (max-width: 480px) {
-    width: calc(100% - 1rem);
-    margin: 0.3rem auto 0;
-    padding: 0.6rem 0.9rem;
+    padding: 0.6rem 1rem;
   }
 
   .logo {
@@ -271,7 +261,7 @@
 
 [data-theme="light"] .navbar {
   background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 
   &.scrolled {

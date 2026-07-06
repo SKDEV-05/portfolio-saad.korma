@@ -5,10 +5,8 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { useLanguage } from '../i18n/LanguageContext';
-import { FaGithub, FaPlay, FaStar, FaCodeBranch } from 'react-icons/fa';
-import { VscGitCommit } from 'react-icons/vsc';
+import { FaGithub, FaPlay } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi2';
-import { useGitHubStats } from '../hooks/useGitHubStats';
 
 // ── Image with skeleton ─────────────────────────────────
 const ImageWithSkeleton = ({ src, alt, style }) => {
@@ -62,43 +60,7 @@ const VideoPlayer = ({ src, poster }) => {
   );
 };
 
-// ── GitHub Stats Bar ────────────────────────────────────
-const GitHubStatsBar = ({ repo }) => {
-  const { stats, loading } = useGitHubStats(repo);
 
-  if (!repo) return null;
-  if (loading) return <div className="github-stats"><span className="stat-loading">Loading stats…</span></div>;
-  if (!stats) return null;
-
-  return (
-    <div className="github-stats">
-      {stats.commits > 0 && (
-        <span className="stat-item">
-          <VscGitCommit />
-          <strong>{stats.commits}</strong> commits
-        </span>
-      )}
-      {stats.stars > 0 && (
-        <span className="stat-item">
-          <FaStar />
-          <strong>{stats.stars}</strong>
-        </span>
-      )}
-      {stats.forks > 0 && (
-        <span className="stat-item">
-          <FaCodeBranch />
-          <strong>{stats.forks}</strong>
-        </span>
-      )}
-      {stats.topLang && (
-        <span className="stat-item">
-          <span className="lang-dot" style={{ background: stats.topLangColor }} />
-          {stats.topLang}
-        </span>
-      )}
-    </div>
-  );
-};
 
 // ── Main ProjectCard ────────────────────────────────────
 const ProjectCard = ({ project, index }) => {
@@ -180,8 +142,7 @@ const ProjectCard = ({ project, index }) => {
           )}
         </div>
 
-        {/* Live GitHub stats */}
-        <GitHubStatsBar repo={project.repo} />
+
       </div>
 
       {/* ── Browser mockup ─────────────────────────────── */}
