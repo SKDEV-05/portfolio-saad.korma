@@ -55,7 +55,8 @@ export const translations = {
         frontend: 'Frontend',
         backend: 'Backend',
         database: 'Database',
-        mobile: 'Mobile'
+        mobile: 'Mobile',
+        language: 'Languages'
       },
       views: {
         globe: '3D Globe',
@@ -221,7 +222,8 @@ export const translations = {
         frontend: 'Frontend',
         backend: 'Backend',
         database: 'Bases de données',
-        mobile: 'Mobile'
+        mobile: 'Mobile',
+        language: 'Langages'
       },
       views: {
         globe: 'Globe 3D',
@@ -351,6 +353,7 @@ export const translations = {
       description: 'Desarrollador Full-Stack de 20 años de Marruecos. Apasionado por la creación de aplicaciones web rápidas y escalables.',
       viewWork: 'Ver Proyectos',
       aboutMe: 'Acerca de mí',
+      letsTalk: 'Hablemos',
       downloadCV: 'Descargar CV'
     },
     // Journey
@@ -383,7 +386,8 @@ export const translations = {
         frontend: 'Frontend',
         backend: 'Backend',
         database: 'Bases de Datos',
-        mobile: 'Móvil'
+        mobile: 'Móvil',
+        language: 'Lenguajes'
       },
       views: {
         globe: 'Globo 3D',
@@ -513,6 +517,7 @@ export const translations = {
       description: 'مطور ويب متكامل (Full-Stack) يبلغ من العمر 20 عاماً من المغرب. شغوف ببناء تطبيقات ويب سريعة وقابلة للتوسع.',
       viewWork: 'عرض المشاريع',
       aboutMe: 'عني',
+      letsTalk: 'لنحاور',
       downloadCV: 'تحميل السيرة الذاتية'
     },
     // Journey
@@ -545,7 +550,8 @@ export const translations = {
         frontend: 'الواجهة الأمامية',
         backend: 'الواجهة الخلفية',
         database: 'قواعد البيانات',
-        mobile: 'تطبيقات الموبايل'
+        mobile: 'تطبيقات الموبايل',
+        language: 'لغات البرمجة'
       },
       views: {
         globe: 'كرة ثلاثية الأبعاد',

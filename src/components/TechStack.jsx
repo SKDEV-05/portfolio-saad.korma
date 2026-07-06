@@ -11,7 +11,7 @@ const TechStack = () => {
   const { t } = useLanguage();
 
   // List of categories for filtering
-  const categories = ['all', 'frontend', 'backend', 'database', 'mobile'];
+  const categories = ['all', 'frontend', 'backend', 'database', 'mobile', 'language'];
 
   // Filter tech stack based on active category
   const filteredStack = activeCategory === 'all' 
