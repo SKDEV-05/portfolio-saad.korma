@@ -16,6 +16,14 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-smooth);
 
+  &.drawer-open {
+    background: transparent !important;
+    border-bottom: 1px solid transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
   @media (max-width: 768px) {
     padding: 1rem 1.5rem;
   }
@@ -263,9 +271,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(5, 5, 5, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--color-bg);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -274,14 +282,47 @@
   .drawer-content {
     width: 100%;
     max-width: 400px;
-    padding: 2rem;
+    padding: 3rem 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .drawer-brand {
+    margin-top: 1.5rem;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
+      color: var(--color-text-main);
+
+      span {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.3rem;
+    }
   }
 
   .drawer-links {
     display: flex;
     flex-direction: column;
-    gap: 2.2rem;
+    gap: 1.8rem;
+    margin: auto 0;
 
     li {
       a {
@@ -298,6 +339,35 @@
           transform: scale(1.08);
           filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.4));
         }
+      }
+    }
+  }
+
+  .drawer-socials {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      color: var(--color-text-secondary);
+      font-size: 1.25rem;
+      transition: all var(--transition-smooth);
+
+      &:hover {
+        background: rgba(0, 255, 136, 0.08);
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+        transform: translateY(-4px);
+        box-shadow: 0 4px 15px rgba(0, 255, 136, 0.25);
       }
     }
   }
