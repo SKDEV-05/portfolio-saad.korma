@@ -7,6 +7,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 const Navbar = () => {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { language, changeLanguage, t } = useLanguage();
 
   const [theme, setTheme] = useState(() => {
@@ -20,6 +21,14 @@ const Navbar = () => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
@@ -46,7 +55,7 @@ const Navbar = () => {
   return (
     <>
       <motion.nav 
-        className="navbar"
+        className={`navbar ${scrolled ? 'scrolled' : ''}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "circOut" }}
