@@ -52,6 +52,7 @@ export const translations = {
       title: 'Technologies & Tools',
       categories: {
         all: 'All',
+        language: 'Languages',
         frontend: 'Frontend',
         backend: 'Backend',
         database: 'Database',
@@ -218,6 +219,7 @@ export const translations = {
       title: 'Technologies & Outils',
       categories: {
         all: 'Tous',
+        language: 'Langages',
         frontend: 'Frontend',
         backend: 'Backend',
         database: 'Bases de données',
@@ -351,6 +353,7 @@ export const translations = {
       description: 'Desarrollador Full-Stack de 20 años de Marruecos. Apasionado por la creación de aplicaciones web rápidas y escalables.',
       viewWork: 'Ver Proyectos',
       aboutMe: 'Acerca de mí',
+      letsTalk: 'Hablemos',
       downloadCV: 'Descargar CV'
     },
     // Journey
@@ -380,6 +383,7 @@ export const translations = {
       title: 'Tecnologías y Herramientas',
       categories: {
         all: 'Todos',
+        language: 'Lenguajes',
         frontend: 'Frontend',
         backend: 'Backend',
         database: 'Bases de Datos',
@@ -513,6 +517,7 @@ export const translations = {
       description: 'مطور ويب متكامل (Full-Stack) يبلغ من العمر 20 عاماً من المغرب. شغوف ببناء تطبيقات ويب سريعة وقابلة للتوسع.',
       viewWork: 'عرض المشاريع',
       aboutMe: 'عني',
+      letsTalk: 'فلنتحدث',
       downloadCV: 'تحميل السيرة الذاتية'
     },
     // Journey
@@ -542,6 +547,7 @@ export const translations = {
       title: 'التقنيات والأدوات',
       categories: {
         all: 'الكل',
+        language: 'اللغات',
         frontend: 'الواجهة الأمامية',
         backend: 'الواجهة الخلفية',
         database: 'قواعد البيانات',
