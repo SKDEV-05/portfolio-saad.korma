@@ -6,7 +6,6 @@ import MyJourney from './components/MyJourney';
 import Services from './components/Services';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
-import GitHubStats from './components/GitHubStats';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ThreeBackground from './components/ThreeBackground';
@@ -62,7 +61,6 @@ function App() {
       <Services />
       <TechStack />
       <Projects />
-      <GitHubStats />
       <Contact />
       <Footer />
       <BackToTop />
