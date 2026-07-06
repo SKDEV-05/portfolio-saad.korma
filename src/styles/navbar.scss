@@ -428,5 +428,25 @@
 
 [data-theme="light"] .mobile-drawer {
   background: rgba(248, 249, 250, 0.98);
+  
+  .drawer-brand h3,
+  .drawer-links a,
+  .drawer-socials a {
+    color: var(--color-text-main);
+  }
+  
+  .drawer-brand p {
+    color: var(--color-text-secondary);
+  }
+  
+  .drawer-links a:hover {
+    color: var(--color-accent);
+  }
+  
+  .drawer-socials a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: rgba(0, 168, 112, 0.08);
+  }
 }
 
